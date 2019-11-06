@@ -2,7 +2,9 @@
 
 
 function merge(o1, o2) {
-  ???
+  return {...o1, ...o2};
+
+  // as alternative: Object.assign({}, o1, o2,) ???
 }
 
 let o1 = {x: "x1"}
