@@ -5,14 +5,13 @@
 
 function range(from, to) {
     if (from > to){
-        return console.log ("Second number cannot be lower than first one");
+        return [];
     } else {
         let arr = [];
         for (let i = from; i < to; i++){
-           // console.log(i);           
             arr.push(i);
         }
-        return console.log(arr);
+        return arr;
     }
   }
   

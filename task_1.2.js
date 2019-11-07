@@ -1,14 +1,15 @@
 //Implement an immutable deepMerge
-
 function deepMerge(o1, o2) {
-    // Iterate through `source` properties and if an `Object` set property to merge of `target` and `source` properties
+    let o3 = {};
     for (const key of Object.keys(o2)) {
-        if (o2[key] instanceof Object) Object.assign(o2[key], deepMerge(o1[key], o2[key]));
+      if (o2[key] instanceof o2) { 
+        Object.assign(o1, { [key]: {} });
+        o3 = deepMerge(o1[key], o2[key]);
+        } else { 
+        o3 = Object.assign(o1, { [key]: o2[key] });
+        }
     }
-
-    // Join `target` and modified `source`
-    Object.assign(o1 || {}, o2);
-    return o1;
+    return o3;
   }
   
   let o1 = {x: {y: "x.y"}}
