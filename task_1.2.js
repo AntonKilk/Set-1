@@ -1,9 +1,11 @@
 //Implement an immutable deepMerge
 function deepMerge(o1, o2) {
     let o3 = {};
-    for (const key of Object.keys(o2)) {
-      if (o2[key] instanceof o2) { 
-        Object.assign(o1, { [key]: {} });
+    for (const key in o2) {
+      if (typeof (o2[key]) === "object") {
+        if (!o1[key]){
+          Object.assign(o1, { [key]: {} });
+        }
         o3 = deepMerge(o1[key], o2[key]);
         } else { 
         o3 = Object.assign(o1, { [key]: o2[key] });

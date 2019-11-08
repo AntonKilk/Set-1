@@ -35,4 +35,5 @@ specific fields e.g. Numbers' field or Boolean' field, while functions
 3) Functions are usually used to complete a multilevel task
  e.g. "do this, then this... "etc. It will be a robust work to do with 
 operators only.
+4) Recursion. Functions can use recursion and handle objects.
  */
